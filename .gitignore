@@ -1,3 +1,6 @@
 pkg/
 .vagrant
 .ruby-version
+
+#Geppetto
+.project
