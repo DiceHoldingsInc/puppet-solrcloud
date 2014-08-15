@@ -24,6 +24,7 @@ class solr::config(
   $download_url   = "${mirror}/${version}/${dl_name}"
 
   #Copy the jetty config file
+  #TODO: This should be moved to a template
   file { '/etc/default/jetty':
     ensure  => file,
     source  => 'puppet:///modules/solr/jetty-default',
