@@ -3,6 +3,9 @@
 This is a puppet module for setting up a multi-core solr cluster able to connect to Zookeeper. This module is a fork of 
 https://github.com/vamsee/puppet-solr.
 
+Zookeeper is not installed and configured by this module (IT IS NOT CONSIDERED A PUPPET REQUIREMENT) but it still sort
+of believe you installed it there. Do not disappoint it.
+
 ## Quick Start
 
 Put this in your site.pp file and run sudo puppet apply:
@@ -26,6 +29,13 @@ It's _**highly**_ recommended that you use a mirror like so:
 **NOTE**: Currently only Ubuntu is supported, contributions for other platforms are most welcome.
 The code is well commented, and should give you a clear idea about how this module configures solr.
 
+##Zookeeper
+As of Solr point at
+
+localhost:2181
+
+When searching for the ZK cluster.
+
 ## Running the tests
 
 The module is developed through Vagrant (http://www.vagrantup.com) for easy testability. You can also
@@ -46,6 +56,10 @@ If you want to run the system specs (slower, uses vagrant with serverspec) you c
 If you want to run them all together, use this:
 
     rake spec:all
+
+##TODO
+- Move the jetty configuration out of the static files and create a template
+- ZK presence is out of trust
 
 ##License
 

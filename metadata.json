@@ -1,0 +1,14 @@
+{
+  "author": "jecnua",
+  "dependencies": [],
+  "summary": "Configure and set up a multi-core solrcloud instance",
+  "license": "MIT",
+  "name": "puppet-solrcloud",
+  "operatingsystem_support": [],
+  "project_page": "https://github.com/DiceHoldingsInc/puppet-solrcloud",
+  "requirements": [],
+  "source": "git@github.com:DiceHoldingsInc/puppet-solrcloud.git",
+  "summary": "A puppet module for solrcloud",
+  "tags": [],
+  "version": "0.0.1"
+}
