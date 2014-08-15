@@ -1,12 +1,8 @@
 # == Class: solr
 #
-# This module helps you create a multi-core solr install
-# from scratch. I'm packaging a version of solr in the files
-# directory for convenience. You can replace it with a newer
-# version if you like.
+# This module helps you create a multi-core solrcloud
 #
-# IMPORTANT: Works only with Ubuntu as of now. Other platform
-# support is most welcome.
+# IMPORTANT: Works only with Ubuntu as of now.
 #
 # === Parameters
 #
@@ -25,15 +21,10 @@
 #    cores => [ 'development', 'staging', 'production' ]
 #  }
 #
-# You can also manage/create your cores from solr web admin panel.
-#
 # === Authors
 #
 # Vamsee Kanakala <vamsee AT riseup D0T net>
-#
-# === Copyright
-#
-# Copyright 2012-2013 Vamsee Kanakala, unless otherwise noted.
+# Fabrizio Sabatini <fabrizio.sabatini AT dice D0T com>
 #
 
 class solr (
