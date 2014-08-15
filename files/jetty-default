@@ -25,7 +25,11 @@ JETTY_PORT=8080
 #JETTY_ARGS=
 
 # Extra options to pass to the JVM         
-JAVA_OPTIONS="-Dsolr.solr.home=/usr/share/solr $JAVA_OPTIONS"
+
+#Original
+#JAVA_OPTIONS="-Dsolr.solr.home=/usr/share/solr $JAVA_OPTIONS"
+#TODO: Hardcode for testing
+JAVA_OPTIONS="-Dsolr.solr.home=/usr/share/solr -DnumShards=1 -DzkHost=localhost:2181 $JAVA_OPTIONS"
 
 # Home of Java installation.
 # JAVA_HOME=

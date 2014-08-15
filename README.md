@@ -1,8 +1,7 @@
-# Solr Module  
+# Solrcloud Module
 
-[![Build Status](https://travis-ci.org/vamsee/puppet-solr.png)](https://travis-ci.org/vamsee/puppet-solr)
-
-This is a puppet module for setting up a multi-core solr instance.
+This is a puppet module for setting up a multi-core solr cluster able to connect to Zookeeper. This module is a fork of 
+https://github.com/vamsee/puppet-solr.
 
 ## Quick Start
 
@@ -48,18 +47,6 @@ If you want to run them all together, use this:
 
     rake spec:all
 
-## TODO
-
- * Support other platforms
-
 ##License
 
 MIT. Please see the LICENSE file for more information.
-
-## Contact
-
-Contributions, especially making this multiplatform are most welcome.
-
-## Support
-
-Please log tickets and issues in the issues page (https://github.com/vamsee/puppet-solr/issues)
