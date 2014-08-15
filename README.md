@@ -7,6 +7,7 @@ Zookeeper is not installed and configured by this module (IT IS NOT CONSIDERED A
 of believe you installed it there. Do not disappoint it.
 
 Also the configuration for Solr should be in ZK otherwise you will receive the following error from Solr UI:
+
 	SolrCore Initialization Failures
 	xxx: org.apache.solr.common.cloud.ZooKeeperException:org.apache.solr.common.cloud.ZooKeeperException: Could not find configName for collection xxx found:null
 
