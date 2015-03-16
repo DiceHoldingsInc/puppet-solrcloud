@@ -1,10 +1,10 @@
 Solrcloud Module
 =================
 
-*THIS MODULE IS IN TESTING*
+*THIS IS IN TESTING*
 
-After I moved things around to make it work, this is no more a puppet module,
-but a vagrant wrapper.
+**After I moved things around to make it work, this is no more a puppet module,
+but a vagrant wrapper.**
 
 ## Description
 
