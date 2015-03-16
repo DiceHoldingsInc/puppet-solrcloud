@@ -3,7 +3,7 @@
 # change to 0 to allow Jetty to start
 NO_START=0
 
-# change to 'no' or uncomment to use the default setting in /etc/default/rcS 
+# change to 'no' or uncomment to use the default setting in /etc/default/rcS
 VERBOSE=yes
 
 # Run Jetty as this user ID (default: jetty)
@@ -16,20 +16,16 @@ VERBOSE=yes
 JETTY_HOST=0.0.0.0
 
 # The network port used by Jetty
-JETTY_PORT=8080
+JETTY_PORT=8983
 
 # Timeout in seconds for the shutdown of all webapps
 #JETTY_SHUTDOWN=30
 
-# Additional arguments to pass to Jetty    
+# Additional arguments to pass to Jetty
 #JETTY_ARGS=
 
-# Extra options to pass to the JVM         
-
-#Original
-#JAVA_OPTIONS="-Dsolr.solr.home=/usr/share/solr $JAVA_OPTIONS"
-#TODO: Hardcode for testing
-JAVA_OPTIONS="-Dsolr.solr.home=/usr/share/solr -DnumShards=1 -DzkHost=localhost:2181 $JAVA_OPTIONS"
+# Extra options to pass to the JVM
+JAVA_OPTIONS="-Dsolr.solr.home=/usr/share/solr $JAVA_OPTIONS"
 
 # Home of Java installation.
 # JAVA_HOME=

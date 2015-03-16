@@ -3,16 +3,29 @@ Solrcloud Module
 
 *THIS MODULE IS IN TESTING*
 
-This is a puppet module for setting up a multi-core solr cluster able to connect to Zookeeper. This module is a fork of
-https://github.com/vamsee/puppet-solr.
+After I moved things around to make it work, this is no more a puppet module,
+but a vagrant wrapper.
 
-Zookeeper is not installed and configured by this module (IT IS NOT CONSIDERED A PUPPET REQUIREMENT) but it still sort
-of believe you installed it there. Do not disappoint it.
+## Description
 
-Also the configuration for Solr should be in ZK otherwise you will receive the following error from Solr UI:
+This is a puppet module for setting up a multi-core solr cluster able to connect
+to Zookeeper. This module is a fork of
 
-	SolrCore Initialization Failures
-	xxx: org.apache.solr.common.cloud.ZooKeeperException:org.apache.solr.common.cloud.ZooKeeperException: Could not find configName for collection xxx found:null
+    https://github.com/vamsee/puppet-solr
+
+Zookeeper is not installed and configured by this module (IT IS NOT CONSIDERED A
+PUPPET REQUIREMENT) but it still sort of believe you installed it there. Do not
+disappoint it.
+
+Also the configuration for Solr should be in ZK otherwise you will receive the
+following error from Solr UI:
+
+    SolrCore Initialization Failures
+    xxx: org.apache.solr.common.cloud.ZooKeeperException:org.apache.solr.common.cloud.ZooKeeperException: Could not find configName for collection xxx found:null
+
+## Running Vagrant
+
+    vagrant up --provider vmware_fusion
 
 ## Quick Start
 
@@ -30,7 +43,7 @@ It's _**highly**_ recommended that you use a mirror like so:
 
     class { 'solr':
       mirror        => 'http://apache.mesi.com.ar/lucene/solr',
-      version       => '4.7.2',
+      version       => '4.10.2',
       cores         => ['development', 'staging', 'production'],
     }
 

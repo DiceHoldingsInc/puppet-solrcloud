@@ -24,7 +24,6 @@ class solr::config(
   $download_url   = "${mirror}/${version}/${dl_name}"
 
   #Copy the jetty config file
-  #TODO: This should be moved to a template
   file { '/etc/default/jetty':
     ensure  => file,
     source  => 'puppet:///modules/solr/jetty-default',
@@ -40,7 +39,7 @@ class solr::config(
 
   # download only if WEB-INF is not present and tgz file is not in /tmp:
   exec { 'solr-download':
-    path    =>  ['/usr/bin', '/usr/sbin', '/bin'],
+    path    => [ '/bin', '/sbin' , '/usr/bin', '/usr/sbin', '/usr/local/bin' ],
     command =>  "wget ${download_url}",
     cwd     =>  '/tmp',
     creates =>  "/tmp/${dl_name}",
@@ -50,8 +49,8 @@ class solr::config(
   }
 
   exec { 'extract-solr':
-    path    =>  ['/usr/bin', '/usr/sbin', '/bin'],
-    command =>  "tar xzvf ${dl_name}",
+    path    => [ '/bin', '/sbin' , '/usr/bin', '/usr/sbin', '/usr/local/bin' ],
+    command =>  "tar xvf ${dl_name}",
     cwd     =>  '/tmp',
     onlyif  =>  "test -f /tmp/${dl_name} && test ! -d /tmp/solr-${version}",
     require =>  Exec['solr-download'],
@@ -59,8 +58,9 @@ class solr::config(
 
   # have to copy logging jars separately from solr 4.3 onwards
   exec { 'copy-solr':
-    path    =>  ['/usr/bin', '/usr/sbin', '/bin'],
-    command =>  "jar xvf /tmp/solr-${version}/dist/solr-${version}.war; cp /tmp/solr-${version}/example/lib/ext/*.jar WEB-INF/lib",
+    path    => [ '/bin', '/sbin' , '/usr/bin', '/usr/sbin', '/usr/local/bin' ],
+    command =>  "jar xvf /tmp/solr-${version}/dist/solr-${version}.war; \
+    cp /tmp/solr-${version}/example/lib/ext/*.jar WEB-INF/lib",
     cwd     =>  $solr_home,
     onlyif  =>  "test ! -d ${solr_home}/WEB-INF",
     require =>  Exec['extract-solr'],

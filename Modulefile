@@ -1,4 +1,4 @@
-name    'puppet-solrcloud'
+name    'solr'
 version '0.0.1'
 source  'https://github.com/DiceHoldingsInc/puppet-solrcloud.git'
 license 'MIT'

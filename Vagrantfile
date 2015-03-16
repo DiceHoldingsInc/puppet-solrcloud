@@ -5,8 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "solrcloud" do |solrcloud|
-    solrcloud.vm.box = "precise64"
-    solrcloud.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    solrcloud.vm.box = "hashicorp/precise64"
     solrcloud.vm.network :forwarded_port, guest: 8080, host: 8080
     #solrcloud.vm.provider :virtualbox do |vb|
     #  vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -14,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     solrcloud.vm.provision :puppet do |puppet|
       puppet.manifests_path = "vagrant"
       puppet.manifest_file  = "base.pp"
-      puppet.module_path = "../"
+      puppet.module_path = "modules/"
       puppet.options = "--verbose --debug"
     end
   end
