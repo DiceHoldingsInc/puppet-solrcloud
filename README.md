@@ -1,6 +1,9 @@
-# Solrcloud Module
+Solrcloud Module
+=================
 
-This is a puppet module for setting up a multi-core solr cluster able to connect to Zookeeper. This module is a fork of 
+*THIS MODULE IS IN TESTING*
+
+This is a puppet module for setting up a multi-core solr cluster able to connect to Zookeeper. This module is a fork of
 https://github.com/vamsee/puppet-solr.
 
 Zookeeper is not installed and configured by this module (IT IS NOT CONSIDERED A PUPPET REQUIREMENT) but it still sort
@@ -35,32 +38,9 @@ It's _**highly**_ recommended that you use a mirror like so:
 The code is well commented, and should give you a clear idea about how this module configures solr.
 
 ##Zookeeper
-As of Solr point at
+When searching for the ZK cluster Solr points at:
 
-	localhost:2181
-
-When searching for the ZK cluster.
-
-## Running the tests
-
-The module is developed through Vagrant (http://www.vagrantup.com) for easy testability. You can also
-use this to quickly test the module for yourself. Just cd into the directory and run:
-
-    vagrant up
-
-The solr server maps to port 8080 by default, and vagrant maps this to port 8080 on host system also.
-So you should be able to see the solr server running at http://0.0.0.0:8080/solr. This module also has
-a good test suite, you can run the specs by simply typing:
-
-    rake
-
-If you want to run the system specs (slower, uses vagrant with serverspec) you can do the following:
-
-    rake spec:system
-
-If you want to run them all together, use this:
-
-    rake spec:all
+    localhost:2181
 
 ##TODO
 - Move the jetty configuration out of the static files and create a template
