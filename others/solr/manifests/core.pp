@@ -16,26 +16,25 @@ define solr::core(
 
   $solr_home  = $solr::params::solr_home
 
-  file { "${solr_home}/${core_name}":
-    ensure  => directory,
-    owner   => 'jetty',
-    group   => 'jetty',
-    require => File[$solr_home],
-  }
-
   #Finally, create the data directory where solr stores
   #its indexes with proper directory ownership/permissions.
-  file { "/var/lib/solr/${core_name}":
+  file { "${solr_home}/${core_name}":
     ensure => directory,
     owner  => 'jetty',
     group  => 'jetty'
-    #require => File["${solr_home}/${core_name}/conf"],
   }
 
-  file { "/var/lib/solr/${core_name}/data":
+  file { "${solr_home}/${core_name}/data":
     ensure => directory,
     owner  => 'jetty',
     group  => 'jetty'
+  }
+
+  file { "${solr_home}/${core_name}/core.properties":
+    ensure  => present,
+    owner   => 'jetty',
+    group   => 'jetty',
+    content => "name=${core_name}"
   }
 
 }

@@ -4,7 +4,8 @@
 
 # Do an apt-update, install ruby-dev to bootstrap ruby-dev
 
-apt-get update
+#TODO: Should be decommented only first time
+#apt-get update
 apt-get install -y ruby-dev git
 
 # Check for librarian-puppet

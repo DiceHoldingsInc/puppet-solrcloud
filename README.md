@@ -6,6 +6,10 @@ Solrcloud Module
 **After I moved things around to make it work, this is no more a puppet module,
 but a vagrant wrapper.**
 
+STATUS:
+- Solr start (one node)
+- No core on it
+
 ## Description
 
 This is a puppet module for setting up a multi-core solr cluster able to connect

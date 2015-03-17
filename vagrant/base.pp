@@ -25,5 +25,7 @@ include java7
 class { 'solr':
   mirror  => 'http://apache.bytenet.in/lucene/solr',
   version => '4.10.3',
-  cores   => ['test'],
+  cores   => ['one'],
 }
+
+class { 'zookeeper': }
