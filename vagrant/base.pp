@@ -23,5 +23,5 @@ class { 'base':
 class { 'solr':
   mirror  => 'http://apache.bytenet.in/lucene/solr',
   version => '4.10.3',
-  cores   => ['development', 'staging', 'production'],
+  cores   => ['test'],
 }

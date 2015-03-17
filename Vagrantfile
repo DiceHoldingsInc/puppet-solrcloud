@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "solrcloud" do |solrcloud|
     solrcloud.vm.box = "hashicorp/precise64"
-    solrcloud.vm.network :forwarded_port, guest: 8080, host: 8080
+    solrcloud.vm.network :forwarded_port, guest: 8983, host: 1234
     #solrcloud.vm.provider :virtualbox do |vb|
     #  vb.customize ["modifyvm", :id, "--memory", "1024"]
     #end

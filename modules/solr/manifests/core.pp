@@ -23,16 +23,6 @@ define solr::core(
     require => File[$solr_home],
   }
 
-  #Copy its config over
-  #file { "${solr_home}/${core_name}/conf":
-  #  ensure  => directory,
-  #  owner   => 'jetty',
-  #  group   => 'jetty',
-  #  recurse => true,
-  #  source  => 'puppet:///modules/solr/conf',
-  #  require => File["${solr_home}/${core_name}"],
-  #}
-
   #Finally, create the data directory where solr stores
   #its indexes with proper directory ownership/permissions.
   file { "/var/lib/solr/${core_name}":
@@ -41,4 +31,11 @@ define solr::core(
     group  => 'jetty'
     #require => File["${solr_home}/${core_name}/conf"],
   }
+
+  file { "/var/lib/solr/${core_name}/data":
+    ensure => directory,
+    owner  => 'jetty',
+    group  => 'jetty'
+  }
+
 }
