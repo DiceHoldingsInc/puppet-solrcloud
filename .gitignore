@@ -4,3 +4,7 @@ pkg/
 
 #Geppetto
 .project
+.tmp/
+modules/
+Puppetfile.lock
+.librarian

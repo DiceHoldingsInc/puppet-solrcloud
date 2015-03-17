@@ -19,6 +19,8 @@ class { 'base':
   stage => first,
 }
 
+include java7
+
 # With all options
 class { 'solr':
   mirror  => 'http://apache.bytenet.in/lucene/solr',
